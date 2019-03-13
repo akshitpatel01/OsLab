@@ -21,7 +21,7 @@ void print(int frame_size,int frame[])
 
 int predict(int reference_length, int references[], int page_no ,int frame_size,int frame[], int start)
 {
-	int pos = -1, farthest = start, i;
+	int pos = -1, temp = start, i,temp1;
 	for(i=0;i<frame_size;i++)
 	{
 		int j;
@@ -29,9 +29,10 @@ int predict(int reference_length, int references[], int page_no ,int frame_size,
 		{
 			if(frame[i]==references[j])
 			{
-				if(j<farthest)
+				temp1 = start-j;
+				if(temp1<temp)
 				{
-					farthest=j;
+					temp=start-j;
 					pos=i;
 				}
 				break;
