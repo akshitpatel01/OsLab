@@ -102,5 +102,9 @@ int main()
 		scanf("%d",&reference[i]);
 		add_reference(frame_size,frame,reference[i],i,number_of_references,reference);
 	}
+	for(i=0;i<number_of_references;i++)
+	{
+		add_reference(frame_size,frame,reference[i],i,number_of_references,reference);
+	}
 	printf("\nNumber of faults: %d \nNumber of hits: %d\n",faults,hits );
 }
